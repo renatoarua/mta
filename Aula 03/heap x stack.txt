@@ -1,0 +1,69 @@
+
+
+
+
+O compilador, de maneira geral, divide a memória em duas grandes áreas: a stack (uma área bem menor) e a heap (uma área bem maior).
+
+Na configuração padrão do .NET Framework, para que você tenha uma idéia melhor de como a stack é muito menor que a heap, o tamanho padrão para a memória stack é de apenas 1MB!
+
+Ambas trabalham como pilhas, porém, a maneira como cada uma provê acesso a seu conteúdo é diferente. A stack é bem mais eficiente para localizar as coisas 
+em seu interior com relação a heap, mesmo porque ela é bem menor.
+
+stack:
+As variáveis de alguns tipos de dados leves (tipos primitivos – int, double, bool etc. – e structs) são armazenadas diretamente na stack, a área menor e mais eficiente para 
+localização dos conteúdos. Elas ficam diretamente nessa área justamente por serem tipos de dados que não ocupam tanto espaço na memória. O mais interessante é que o valor que 
+elas contêm também fica junto com elas na stack. Ou seja, quando você faz a declaração abaixo:
+
+int numero = 3;
+
+O compilador armazena essa variável diretamente na memória stack
+Perceba que o valor da variável fica junto com a própria variável. Variáveis onde isso acontece são chamadas de Value-Types, justamente porque o valor delas fica junto com 
+a própria variável na memória stack. Assim, quando você tem o seguinte código:
+
+if (numero >= 3)
+{
+    //...
+}
+
+O compilador tem acesso direto ao conteúdo, pois ele está juntinho com a própria variável na memória stack:
+
+
+heap:
+Agora, outros tipos de dados ocupam muito mais espaço de memória do que estes tipos leves que são value-types. Por isso, eles não podem ser armazenados diretamente na stack 
+(caso fossem, rapidamente a memória stack seria “estourada”, causando o famoso erro StackOverflowException). Sendo assim, estes dados são armazenados na memória heap.
+
+class Pessoa
+{
+    public int Id {get; set;}
+    public string Nome {get; set;}
+}
+
+Quando você cria um objeto dessa classe, este objeto será armazenado na memória heap:
+
+Pessoa minhaPessoa = new Pessoa();
+
+Porém, o compilador não acessa a heap diretamente. Por que ele não acessa? Justamente porque ela é muito grande… Se ele fosse procurar o objeto minhaPessoa dentro da heap, 
+ele iria demorar um tantinho bom de tempo. O compilador precisaria ter um jeito de acessar pela stack (que é rápida pra encontrar as coisas até mesmo por ser bem menor) o 
+que está alocado na heap (que é bem maior). Como o compilador contorna isso? Criando uma referência dentro da stack para o objeto minhaPessoa, apontando onde na memória heap 
+que este objeto está de fato guardado!
+
+Essa porção de memória que é alocada na stack para apontar para uma posição de memória da heap é chamada de ponteiro. Por isso ele tem esse asterisco (*) na frente do seu nome.
+
+Repare então que é criada uma referência da stack para uma determinada posição de memória da heap, referência essa guardada por um ponteiro na stack. Esse tipo de variável 
+(como no caso da variável minhaPessoa, do tipo Pessoa) é chamada de Reference-Type, já que é necessário uma referência da stack para a heap para que esta variável seja acessível. 
+Variáveis reference-type geralmente precisam que seja chamado o respectivo construtor através da palavra-chave new, pois ele é que define que uma porção de memória da heap deverá 
+ser utilizada para guardar aquele objeto.
+
+Dessa maneira, quando temos o código abaixo:
+
+if (minhaPessoa.Id > 2)
+{
+    //...
+}
+
+O compilador faz o acesso ao objeto minhaPessoa através da stack, ou seja, através do ponteiro. Esse ponteiro encaminha o compilador para a posição de memória da heap que contém 
+de fato o objeto minhaPessoa.
+
+
+https://www.treinaweb.com.br/blog/gerenciamento-de-memoria-no-c-stack-heap-value-types-e-reference-types/
+https://pt.stackoverflow.com/questions/3797/o-que-s%C3%A3o-e-onde-est%C3%A3o-a-stack-e-heap

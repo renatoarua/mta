@@ -1,0 +1,24 @@
+Código Gerenciado – Definição
+ 
+
+Sem enrolação, código gerenciado é aquele cuja execução é gerenciada em tempo de execução pelo CLR (Common Language Runtime), 
+independente da implementação (Mono, .NET Framework ou .NET Core).
+
+O CLR é o responsável por compilar o código gerenciado para a linguagem da máquina em que estiver sendo executado. 
+
+
+
+
+Um programa em C ou C++ é um código não gerenciado.
+
+Quando programamos nestas linguagens, precisamos fazer praticamente tudo: desde gerenciamento de memória até questões de segurança.
+
+O programa resultante é um arquivo binário feito especificamente para aquele hardware. E ele é carregado na memória e é executado pelo Sistema Operacional (SO).
+
+Então em resumo: o código não gerenciado é executado diretamente pelo Sistema Operacional e o código gerenciado é executado por uma entidade que fica acima do SO.
+
+
+
+
+
+https://celsokitamura.com.br/codigo-gerenciado/

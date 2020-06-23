@@ -1,0 +1,63 @@
+- CLR OQue é, oque faz? Serviços; 
+
+ O Common Language Runtime (CLR) é o componente do .NET Framework responsável pelo gerenciamento da execução de programas gravados 
+em qualquer uma das várias linguagens suportadas, permitindo que eles compartilhem classes comuns orientadas a
+ objetos escritos em qualquer um dos idiomas.
+
+Podemos comparar o Common Language Runtime com a máquina virtual Java que a Sun Microsystems fornece para 
+executar programas compilados a partir da linguagem Java.
+
+ A Microsoft chama o Common Language Runtime como um “ambiente de execução gerenciado.” 
+ Um programa compilado para o CLR não precisa de um ambiente de execução específico do idioma e pode ser movido facilmente 
+ para ser executado em qualquer sistema suportado pelo .NET Framework.
+
+
+benefícios 
+A habilidade para, facilmente, usar componentes desenvolvidos em outras linguagens.
+Tipos extensíveis para a biblioteca de uma classe.
+Recursos de linguagem, tais como herança, interfaces, e sobrecarga para programação orientada a objeto.
+Suporte para threads, o que permite a criação de aplicações multithread, escaláveis.
+Suporte para tratamento de exceção estruturado.
+Suporte para atributos personalizados.
+Coletor de lixo.(GB Garbet colector)
+
+
+
+
+
+- CLI OQue é, oque faz? Serviços.
+O Common Language Infrastructure é um padrão desenvolvido pela Microsoft que permite o uso de vários
+linguagens diferentes de alto nível em diferentes plataformas de computador sem reescrever o código para qualquer arquitetura específica. 
+Em termos simples, a Common Language Infrastructure (CLI) permite que um programa de aplicativo escrito em qualquer linguagem de 
+programação, seja executado em qualquer sistema operacional usando um programa de tempo de execução, em vez de um 
+específico para cada idioma. 
+
+O .NET Framework, .NET Core e Mono são algumas implementações da CLI.
+
+
+A CLI consiste em 4 recursos...
+
+Sistema de tipos comuns (CTS)
+Define os tipos de programação e operações suportadas pelo mecanismo de tempo de execução .NET. Ele define regras que os idiomas devem seguir, 
+o que ajuda a garantir que objetos escritos em idiomas diferentes possam interagir entre si. Ele define as regras que garantem que os tipos de
+ dados dos objetos escritos em vários idiomas possam interagir entre si.
+
+Metadados
+Descreve todas as classes e membros da classe definidos na montagem e as classes e membros da classe que a montagem atual chamará de 
+outra montagem. Um compilador da linguagem CLI gerará os metadados e os armazenará no assembly que contém o CIL. Quando o tempo de execução
+ executa a CLI, ele verifica se os metadados do método chamado são iguais aos metadados armazenados no método de chamada. Isso garante que um 
+ método possa ser chamado apenas com exatamente o número certo de parâmetros e exatamente os tipos de parâmetros certos. Os metadados podem ser
+ adicionados ao código por meio de atributos.
+
+CLS (Common Language Specification)
+Para que as linguagens de programação se comuniquem efetivamente, o direcionamento à CLI não é suficiente. 
+Deve haver um conjunto comum de padrões aos quais toda linguagem .NET deve aderir. Esse conjunto comum de recursos de 
+idioma é chamado de CLS (Common Language Specification).
+
+Sistema de Execução Virtual (VES)
+O VES é responsável por carregar e executar programas escritos para o tempo de execução do .NET. O objetivo do VES é 
+fornecer suporte necessário para executar o conjunto de instruções CIL (Common Intermediate Language).
+
+Todos os idiomas compatíveis são compilados no Common Intermediate Language (CIL), que é um idioma intermediário. 
+Quando o código é executado, o VES específico da plataforma compila o CIL para o idioma da máquina de acordo com 
+o hardware e sistema operacional específicos.

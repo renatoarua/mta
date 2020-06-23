@@ -1,0 +1,21 @@
+CLR OQue é, oque faz? Serviços; CLI OQue é, oque faz? Serviços.
+Visão Geral da Compilação; Código Managed X Unmanaged
+Tipos de Dados; Stack x Heap
+Boxing e Unboxing; OPERADORES; Conversao implicita x explicita
+if...else; switch...case;
+laços de repeticao (for, foreach)
+laços de repeticao (while, do while)
+ARRAY; Enumerador
+Namespaces; Comentários e regiões
+Classes; Modificadores de acesso***; Instâncias
+Classes - Atributos - Propriedades - Construtores
+Classes - Métodos - parametros***
+Classes - Sobrecarga - assinatura de um metodo
+Herança; Sobrescrita de Métodos
+Polimorfismo; Classes Abstratas***
+herança – palavras-chave *
+Modificadores de Classes***
+ModificadoreS de Membros***
+Interfaces
+Collections
+Coleções Genéricas - metodos
